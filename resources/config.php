@@ -5,15 +5,9 @@ $config = array(
     "username" => "root",
     "password" => "",
     "host" => "localhost"
-  ),
-  "paths" => array(
-    "resources" =>  $_SERVER["DOCUMENT_ROOT"] . "/web_app/resources",
-    "images" => array(
-      "layout" => $_SERVER["DOCUMENT_ROOT"] . "/web_app/public/images/layout"
-    )
   )
 );
 
 define("LIBRARY_PATH", $_SERVER["DOCUMENT_ROOT"] . "/web_app/resources/library");
-
+define("BASE_URL", "http://" . $_SERVER["SERVER_NAME"] . "/web_app/public");
 define("TEMPLATES_PATH", $_SERVER["DOCUMENT_ROOT"] . '/web_app/resources/templates');
