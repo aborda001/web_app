@@ -1,14 +1,10 @@
 <?php
 require_once("../resources/config.php");
-
-require_once(TEMPLATES_PATH . "/header.php");
+require_once(TEMPLATES_PATH . "/panel.php");
+require_once(TEMPLATES_PATH . "/navbar.php");
 ?>
-<div id="container">
-  <div id="content">
-  </div>
-  <?php
-  require_once(TEMPLATES_PATH . "/rightPanel.php");
-  ?>
+<div class="container">
+  <h1>hola mudno</h1>
 </div>
 <?php
 require_once(TEMPLATES_PATH . "/footer.php");
