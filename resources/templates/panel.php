@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="css/index.css">
   <link rel="icon" type="image/png" href="images/logo.png" sizes="16x16">
 
-  <title>Simple site</title>
+  <title><?php echo $title; ?></title>
 </head>
 
 <body>
@@ -40,10 +40,10 @@
         </div>
         <ul class="navigation-list">
           <li class="navigation-list-item active">
-            <a class="navigation-link" href="/">
+            <a class="navigation-link" href="<?php echo BASE_URL . "/teachers/guardar.php" ?>">
               <div class="row">
                 <div class="col-2">
-                  <i class="fas fa-tachometer-alt"></i>
+                  <i class="fas fa-save"></i>
                 </div>
                 <div class="col-9">
                   Guardar
@@ -52,47 +52,77 @@
             </a>
           </li>
           <li class="navigation-list-item">
-            <a class="navigation-link" href="/">
-              <div class="row">
-                <div class="col-2">
-                  <i class="fas fa-users"></i>
-                </div>
-                <div class="col-9">
-                  Listar
-                </div>
+            <a class="navigation-link" href="<?php echo BASE_URL . "/teachers/listar.php" ?>"">
+              <div class=" row">
+              <div class="col-2">
+                <i class="fas fa-clipboard-list"></i>
               </div>
-            </a>
-          </li>
-        </ul>
-        <div class="teams-title-container">
-          <p class="teams-title">MATERIAS
-          </p>
-        </div>
-        <ul class="navigation-list">
-          <li class="navigation-list-item">
-            <a class="navigation-link" href="/">
-              <div class="row">
-                <div class="col-2">
-                  <i class="fas fa-tachometer-alt"></i>
-                </div>
-                <div class="col-9">
-                  Guardar
-                </div>
+              <div class="col-9">
+                Listar
               </div>
-            </a>
-          </li>
-          <li class="navigation-list-item">
-            <a class="navigation-link" href="/">
-              <div class="row">
-                <div class="col-2">
-                  <i class="fas fa-users"></i>
-                </div>
-                <div class="col-9">
-                  Listar
-                </div>
-              </div>
-            </a>
-          </li>
-        </ul>
       </div>
+      </a>
+      </li>
+      </ul>
+      <div class="teams-title-container">
+        <p class="teams-title">MATERIAS
+        </p>
+      </div>
+      <ul class="navigation-list">
+        <li class="navigation-list-item">
+          <a class="navigation-link" href="<?php echo BASE_URL . "/subjects/guardar.php" ?>"">
+              <div class=" row">
+            <div class="col-2">
+              <i class="fas fa-save"></i>
+            </div>
+            <div class="col-9">
+              Guardar
+            </div>
     </div>
+    </a>
+    </li>
+    <li class="navigation-list-item">
+      <a class="navigation-link" href="<?php echo BASE_URL . "/subjects/listar.php" ?>"">
+              <div class=" row">
+        <div class="col-2">
+          <i class="fas fa-clipboard-list"></i>
+        </div>
+        <div class="col-9">
+          Listar
+        </div>
+  </div>
+  </a>
+  </li>
+  </ul>
+  <div class="teams-title-container">
+    <p class="teams-title">EXPORTAR PDF
+    </p>
+  </div>
+  <ul class="navigation-list">
+    <li class="navigation-list-item">
+      <a class="navigation-link" href="<?php echo BASE_URL . "/pdf/teachers.php" ?>"">
+              <div class=" row">
+        <div class="col-2">
+          <i class="fas fa-chalkboard-teacher"></i>
+        </div>
+        <div class="col-9">
+          Docentes
+        </div>
+        </div>
+      </a>
+    </li>
+    <li class="navigation-list-item">
+      <a class="navigation-link" href="<?php echo BASE_URL . "/pdf/subjects.php" ?>"">
+              <div class=" row">
+        <div class="col-2">
+          <i class="fas fa-file-signature"></i>
+        </div>
+        <div class="col-9">
+          Materias
+        </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+  </div>
+  </div>
