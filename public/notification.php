@@ -11,6 +11,6 @@ function showNotify()
 
 function setNotify($message, $alert)
 {
-  setcookie("message", $message, time() + 5);
-  setcookie("alert", $alert, time() + 5);
+  setcookie("message", $message, time() + 2);
+  setcookie("alert", $alert, time() + 2);
 }
