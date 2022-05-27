@@ -14,7 +14,7 @@ include LIBRARY_PATH . '/db.php';
       shownotify();
 
       $connection = connect($config);
-      $query = "SELECT subjects.id, subjects.name AS subject_name, subjects.hours, teachers.name, teachers.lastname from subjects JOIN teachers ON subjects.teacher_id = teachers.id;";
+      $query = "SELECT subjects.id, subjects.name AS subject_name, subjects.hours, subjects.teacher_id, teachers.name, teachers.lastname FROM subjects JOIN teachers ON subjects.teacher_id = teachers.id OR subjects.teacher_id IS NULL;";
 
       $response = mysqli_query($connection, $query);
       mysqli_close($connection);
@@ -41,7 +41,7 @@ include LIBRARY_PATH . '/db.php';
             <?php
             $index = 1;
             while ($row = mysqli_fetch_assoc($response)) {
-              $teacher = $row['name'] . " " . $row['lastname'];
+              $teacher = $row['teacher_id'] == null ? 'Sin asignar' : $row['name'] . ' ' . $row['lastname'];
               $hours = $row['hours'] . ($row['hours'] > 1 ? " horas" : " hora");
               echo "
                 <tr>
