@@ -21,7 +21,7 @@ include LIBRARY_PATH . '/db.php';
 
       $response = mysqli_query($connection, $query);
 
-      $query = "SELECT name, hours, teacher_id FROM subjects WHERE id = '$id'";
+      $query = "SELECT subjects.name, subjects.hours, subjects.teacher_id FROM subjects WHERE id = '$id'";
       $subjects =  mysqli_fetch_array(mysqli_query($connection, $query));
       mysqli_close($connection);
 
