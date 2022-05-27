@@ -106,7 +106,7 @@
 				</div>
 				<ul class="navigation-list">
 					<li class="navigation-list-item">
-						<a class="navigation-link" href="<?php echo BASE_URL . " /pdf/teachers.php" ?>"">
+						<a class="navigation-link" href="<?php echo BASE_URL . "/pdf/teachers.php" ?>" target="_blank"">
 							<div class=" row">
 								<div class="col-2">
 									<i class="fas fa-chalkboard-teacher"></i>
@@ -118,7 +118,7 @@
 						</a>
 					</li>
 					<li class="navigation-list-item">
-						<a class="navigation-link" href="<?php echo BASE_URL . " /pdf/subjects.php" ?>"">
+						<a class="navigation-link" href="<?php echo BASE_URL . "/pdf/subjects.php" ?>" target="_blank"">
 							<div class=" row">
 								<div class="col-2">
 									<i class="fas fa-file-signature"></i>
