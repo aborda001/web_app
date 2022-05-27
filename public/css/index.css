@@ -19,6 +19,11 @@
   cursor: pointer;
 }
 
+:root {
+	--sidebar-width: 300px;
+	--sidebar-width-deactive: -300px;
+}
+
 body {
   background-color: #e6e6e6;
 }
@@ -29,7 +34,7 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  width: 250px;
+  width: var(--sidebar-width);
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
@@ -37,7 +42,7 @@ body {
 }
 
 .page .content {
-  margin-left: 250px;
+  margin-left: var(--sidebar-width);
   transition: all 0.3s ease;
 }
 
@@ -78,7 +83,7 @@ body {
 }
 
 body.active .page .sidebar {
-  left: -250px;
+  left: var(--sidebar-width-deactive);
 }
 
 body.active .page .content {
@@ -234,4 +239,18 @@ section > .login {
 .login form input[type='submit'] {
   font-size: 20px;
   margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+	.page .sidebar {
+		width: 100%;
+	}
+
+	body.active .page .sidebar {
+		left: -100%;
+	}
+
+	.sidebarToggle:hover {
+		color: black;
+	}
 }
