@@ -40,20 +40,24 @@ include LIBRARY_PATH . '/db.php';
           <tbody>
             <?php
             $index = 1;
+            $subjects_listed = [];
             while ($row = mysqli_fetch_assoc($response)) {
-              $teacher = $row['teacher_id'] == null ? 'Sin asignar' : $row['name'] . ' ' . $row['lastname'];
-              $hours = $row['hours'] . ($row['hours'] > 1 ? " horas" : " hora");
-              echo "
+              if (!in_array($row['id'], $subjects_listed)) {
+                $teacher = $row['teacher_id'] == null ? 'Sin asignar' : $row['name'] . ' ' . $row['lastname'];
+                $hours = $row['hours'] . ($row['hours'] > 1 ? " horas" : " hora");
+                echo "
                 <tr>
                   <th scope='row'>" . $index++ . "</th>
                   <td>" . $row['subject_name'] . "</td>
                   <td>" . $hours . "</td>
                   <td>" . $teacher . "</td>
                   <td>
-                    <a href='". BASE_URL."/update-subjects.php?id=" . $row['id'] . "' class='btn btn-success mx-1 my-1'> <i class='fas fa-pen'></i> </a>
-                    <a href='". BASE_URL."/delete.php?id=" . $row['id'] . "&table=subjects' class='btn btn-danger mx-1 my-1'> <i class='fas fa-trash'></i> </a>
+                    <a href='" . BASE_URL . "/update-subjects.php?id=" . $row['id'] . "' class='btn btn-success mx-1 my-1'> <i class='fas fa-pen'></i> </a>
+                    <a href='" . BASE_URL . "/delete.php?id=" . $row['id'] . "&table=subjects' class='btn btn-danger mx-1 my-1'> <i class='fas fa-trash'></i> </a>
                   </td>
                 </tr>";
+                array_push($subjects_listed, $row['id']);
+              }
             }
             ?>
           </tbody>
