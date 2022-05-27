@@ -1,4 +1,5 @@
 <?php
+$actived = [' active', '', '', ''];
 $title = 'Guardar Docente';
 require_once("../resources/config.php");
 require_once(TEMPLATES_PATH . "/panel.php");
@@ -16,7 +17,7 @@ require_once(TEMPLATES_PATH . "/navbar.php");
     <section class="col-md-5">
       <div class="login">
         <h1 class="text-center">Registar Docente</h1>
-        <form class="needs-validation" action="guardarTeacher.php" method="POST">
+        <form class="needs-validation" action="create.php" method="POST">
           <div class="form-group was-validated">
             <label class="form-label" for="document">Cédula</label>
             <input class="form-control" type="number" name="document" required>
@@ -37,9 +38,9 @@ require_once(TEMPLATES_PATH . "/navbar.php");
             <label class="form-label" for="profession">Profesion</label>
             <input class="form-control" type="text" name="profession" required>
           </div>
+          <input type="text" value="true" hidden name="teacher">
           <input class="btn btn-success w-100" type="submit" value="GUARDAR">
         </form>
-
       </div>
     </section>
   </div>
