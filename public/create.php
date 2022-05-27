@@ -40,7 +40,7 @@ if ($_POST['teacher'] == 'true') {
   $response = mysqli_query($connection, $query);
   mysqli_close($connection);
 
-  $location = "Location: " . BASE_URL."/subjects.php";
+  $location = "Location: " . BASE_URL . "/subjects.php";
 
   if ($response) {
     $message = "Materia agregada correctamente";
